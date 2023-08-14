@@ -43,7 +43,7 @@ lazy.opts = {lazy = true}
 
 lazy.setup({
 	-- Appearance
-	{'projekt0n/github-nvim-theme'},
+	--{'projekt0n/github-nvim-theme'}, -- I removed this in favor of the built-in habamax theme.
 	{'nvim-treesitter/nvim-treesitter'},
 	{'nvim-treesitter/nvim-treesitter-textobjects'},
 	{'lukas-reineke/indent-blankline.nvim'},

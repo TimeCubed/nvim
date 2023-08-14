@@ -19,5 +19,8 @@ require('plugins.autocomplete-setup.config')
 require('plugins.treesitter.tsconfig')
 require('plugins.nvim-devicons.config')
 require('plugins.telescope.config')
-require('plugins.github-nvim-theme.config')
+
+-- I changed the 'github-nvim-theme' folder to 'colorscheme' instead
+-- so it's more clear what it's for, as well as to be more general with it.
+require('plugins.colorscheme.config')
 require('plugins.code-runner.config')
