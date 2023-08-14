@@ -38,10 +38,10 @@ vim.keymap.set({'n', 'v'}, 'L', '$')
 -- Most people use kj to exit out of insert mode, but I like to use jk instead.
 -- You're unlikely to type kj or jk in any situation though so it won't matter
 -- which one you use.
-vim.keymap.set('i', 'jk', '<Esc>')
+vim.keymap.set({'v', 'i'}, 'jk', '<Esc>')
 
 -- I also unmap the escape key so I get into the habit of using my keymap
-vim.keymap.set('i', '<Esc>', '<NOP>')
+vim.keymap.set({'v', 'i'}, '<Esc>', '<NOP>')
 
 -- This keymap is to quickly open up the netrw explorer so I don't have to use the hard-to-type
 -- :Ex command. You may want to remap this to whatever you'd like.
