@@ -20,10 +20,10 @@ I use the Lazy.nvim package manager for, well, managing packages. I've had great
 and it's been quite easy to use. For plugin setups, there are 2 main files. One of them is located in
 `lua/core/plugins/setup.lua`, and the other in `lua/plugins/lazy/lazy-config.lua`. The setup.lua file
 is to setup all of the plugin configs, and the other one is the config for Lazy.nvim. All of my 
-plugin setups are located in `lua/plugins`. I keep all of the configs in separate folders, and this
+plugin setups are located in `lua/plugins`. ~~I keep all of the configs in separate folders, and this
 may be a little annoying for some who prefer using just single files in a folder, but I made it that
 way, and I can't be bothered enough to refactor the config to use single files (although it's not
-actually *that* difficult). All of the keymaps are located at `lua/core/config/keymaps.lua`, and
+actually *that* difficult)~~ Now done!. All of the keymaps are located at `lua/core/config/keymaps.lua`, and
 almost all of them have comments over them that explain their use case. The NeoVim options are
 located at `lua/core/config/options.lua`, right next to the keymaps file. The basic options don't
 have any comments attached to them, while some of the other options may have some attached to explain

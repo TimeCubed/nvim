@@ -13,7 +13,7 @@ require('code_runner').setup({
 	filetype = {
 		cpp = {
 			"cd $dir &&",
-			"gcc $fileName -o main &&",
+			"gcc $fileName -o main -lstdc++ &&",
 			"./main &&",
 			"rm main"
 		},
