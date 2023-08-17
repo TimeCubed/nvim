@@ -1,4 +1,4 @@
-vim.g.mapleader = ' ' -- I use the space key as the leader. Many other people use this too.
+vim.g.mapleader = ' ' -- I use the space key as the leader key. Many other people use this too.
 
 -- I use this next keymap for opening up a simple terminal. I don't like using plugins because
 -- they can be a bit unreliable at times.

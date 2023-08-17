@@ -7,6 +7,10 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
 	require('cmp_nvim_lsp').default_capabilities()
 )
 
+-- Here is where I setup clangd for C and C++. Soon I'll try adding support for
+-- rust-analyzer, but I just can't seem to find any sources to understand how to
+-- properly set it up.
+
 lspconfig.clangd.setup({
 	single_file_support = true,
 	flags = {
@@ -14,9 +18,17 @@ lspconfig.clangd.setup({
 	},
 })
 
+-- Here I create an aut command on the event 'LspAttach', which fires whenever an
+-- LSP gets attached to a file or buffer. I use it to set up stuff like keymaps
+-- when an LSP server is fired up so I can find and do what I want.
 vim.api.nvim_create_autocmd('LspAttach', {
 	desc = 'LSP actions',
 	callback = function()
+		-- This function here doesn't exactly need to be used, I just use it here
+		-- instead of writing vim.keymap.set everywhere. It does pretty much the
+		-- same thing as vim.keymap.set(mode, lhs, rhs, {buffer = true}) but it's
+		-- easier to not write {buffer = true} at the end of every key map and use
+		-- this instead.
 		local bufmap = function(mode, lhs, rhs)
 			local opts = {buffer = true}
 			vim.keymap.set(mode, lhs, rhs, opts)
@@ -49,6 +61,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		bufmap('n', '<leader>uh' , '<cmd>lua vim.lsp.buf.code_action()<CR>')        -- Quick actions
 		bufmap('x', '<leader>uh' , '<cmd>lua vim.lsp.buf.range_code_action()<CR>')  -- Quick actions
 
+		-- These are several diagnostics keymaps. I have never used these before so
+		-- to be quite honest I have no idea what they do.
 		bufmap('n', '<leader>d'  , '<cmd>lua vim.diagnostic.open_float()<CR>')      -- Diagnostics open float
 		bufmap('n', '<leader>dp' , '<cmd>lua vim.diagnostic.goto_prev()<CR>')       -- Diagnostics go to Previous
 		bufmap('n', '<leader>dn' , '<cmd>lua vim.diagnostic.goto_next()<CR>')       -- Diagnostics go to next

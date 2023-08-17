@@ -18,7 +18,7 @@ highly recommend installing a WSL distro instead and using NeoVim there.
 
 I use the Lazy.nvim package manager for, well, managing packages. I've had great luck using it before
 and it's been quite easy to use. For plugin setups, there are 2 main files. One of them is located in
-`lua/core/plugins/setup.lua`, and the other in `lua/plugins/lazy/lazy-config.lua`. The setup.lua file
+`lua/core/plugins/setup.lua`, and the other in `lua/plugins/lazy.lua`. The setup.lua file
 is to setup all of the plugin configs, and the other one is the config for Lazy.nvim. All of my 
 plugin setups are located in `lua/plugins`. ~~I keep all of the configs in separate folders, and this
 may be a little annoying for some who prefer using just single files in a folder, but I made it that
@@ -37,7 +37,7 @@ whatever keybind works best for you.
 To install this config, just create a folder named 'nvim' in `~/.config` (if you're on Windows, please use WSL), 
 and then you can clone the repository using the following command:
 ```
-git clone https://github.com/TimeCubed/nvim ~/.config/nvim/
+git clone https://github.com/TimeCubed/nvim.git ~/.config/nvim/
 ```
 and this will clone the latest config of mine to your `~/.config/nvim` folder. It's that simple!
 
@@ -45,8 +45,6 @@ and this will clone the latest config of mine to your `~/.config/nvim` folder. I
 
 If you would like to fork this config or modify it or whatever you would want to do, feel free to do
 so. I know that a lot of my config conflicts with a lot of people's preferences, but that's what a
-preference is, it's subjective! You may not like this config, so if you would like to make any
-changes, feel free to do so. Also, I will not be accepting pull requests or such, this is not a
-public config, it's a personal one. Although, I will regularly check the Issues tab if there's any
+preference is, it's subjective! You may not like this config, so if you would like to make any changes, feel free to do so. Also, I will not be accepting pull requests or such, this is not a public config, it's a personal one. Although, I will regularly check the Issues tab if there's any
 issue in the config, and I will respond accordingly. Thank you for taking the time to read this, and
 have fun using my config!

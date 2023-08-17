@@ -17,7 +17,6 @@ require('plugins.nvim-lspconfig')
 require('plugins.autocomplete')
 
 require('plugins.treesitter')
-require('plugins.nvim-devicons')
 require('plugins.telescope')
 
 -- I changed the 'github-nvim-theme' folder to 'colorscheme' instead
