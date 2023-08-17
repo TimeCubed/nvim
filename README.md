@@ -4,14 +4,14 @@ This github repo is for my NeoVim config files. My config is quite minimalistic.
 lot of pre-installed plugins here and this is most likely something a lot of people will find a  
 little bad. This config doesn't have stuff like lualine or bufferline or even nvim-tree, instead
 I use Telescope for navigating through files. I used this config (made entirely by myself) to help
-learn neovim, and that's why this config may feel "empty" or "unusable" for some people, as I used
-this config to learn to use the default Vim motions. There are a lot of comments all around the
-config, and I highly recommend reading them to get a better understanding of how stuff is 
-structured.
+learn NeoVim, and that's why this config may feel "empty" or "unusable" for some people, as I used
+this config to learn to use the default Vim motions, so the config is mostly pure NeoVim. There are 
+a lot of comments all around the config, and I highly recommend reading them to get a better 
+understanding of how stuff is structured.
 
 Another note to take is that this config is better used on WSL or Linux rather than on Windows.
 This is because the modularity of this config may not work on Windows (and I've experienced a 
-couple issues myself when I wrote this config on windows) so if you're using neovim on Windows, I 
+couple issues myself when I wrote this config on windows) so if you're using NeoVim on Windows, I 
 highly recommend installing a WSL distro instead and using NeoVim there.
 
 # Technical Details
@@ -34,8 +34,8 @@ whatever keybind works best for you.
 
 # Installation
 
-To install this config, just create a folder named 'nvim' at `~/.config` (if you're on Linux or WSL on
-Windows, please use WSL), and then you can clone the repository using the following command:
+To install this config, just create a folder named 'nvim' in `~/.config` (if you're on Windows, please use WSL), 
+and then you can clone the repository using the following command:
 ```
 git clone https://github.com/TimeCubed/nvim ~/.config/nvim/
 ```
