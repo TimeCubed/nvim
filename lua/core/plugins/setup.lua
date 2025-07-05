@@ -1,32 +1,29 @@
--- Lazy.nvim config. Do not remove.
+-- start lazy.nvim
 require('plugins.lazy')
 
--- Here is where all of the plugin setups are included. You can add your own files if you
--- want. All of the plugin setups here are just the ones from the plugin's respective
--- github repo. They're pretty much the default config, along with a couple keymaps
--- for ease of use for some of them.
+-- actual plugin config.
+-- the order of these is completely haphazard "when I added it"-style
+-- I genuinely don't know if there's a proper order to this or not.
+--
+-- nvm scratch that, I just sorted everything. it's still haphazard, but no
+-- longer a "when I added" flavor of haphazard. not sure what flavor it is,
+-- but it is haphazard.
 
-require('plugins.presence')
-require('plugins.autopairs')
-require('plugins.mason') -- Mason installs the language servers so I don't have to manually. This won't set them up however.
-require('plugins.nvim-lspconfig')
-
--- This next file here is the autocompletion setup. It's mostly the nvim-cmp setup but it
--- also sets up luasnip and a couple other plugins for use along with nvim-cmp.
-
-require('plugins.autocomplete')
-
+-- appearance
 require('plugins.treesitter')
-require('plugins.telescope')
-
-require('plugins.indent-blankline')
---require('plugins.bufferline')
-
--- I changed the 'github-nvim-theme' folder to 'colorscheme' instead
--- so it's more clear what it's for, as well as to be more general with it.
-require('plugins.code-runner')
-
-require('plugins.lualine')
 require('plugins.night-owl')
+require('plugins.lualine')
+require('plugins.indent-blankline')
+require('plugins.colorscheme') -- include this last!
 
-require('plugins.colorscheme')
+-- functionality
+require('plugins.mason')
+require('plugins.nvim-lspconfig')
+require('plugins.autocomplete') -- apparently this sets up luasnip?? where past me?? where??
+require('plugins.code-runner')
+require('plugins.autopairs')
+
+-- removed
+--require('plugins.bufferline')
+--require('plugins.presence')
+--require('plugins.telescope')

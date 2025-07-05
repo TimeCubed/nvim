@@ -1,6 +1,6 @@
--- This plugin is for displaying neovim on discord using rich presence.
--- Sadly it doesn't work on the browser version of discord which I use,
--- so I'm most likely going to remove this config file in the future.
+-- presence.nvim config.
+-- this was also never removed, because it's really hard to type
+-- `rm lua/plugins/presence.nvim`. don't judge me :(
 
 require('presence').setup({
 	auto_update        = true,

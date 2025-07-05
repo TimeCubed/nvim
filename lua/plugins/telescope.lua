@@ -1,7 +1,6 @@
--- These are some basic Telescope keymaps. I mainly use the git_files one. This is straight
--- from the Telescope github repo, except that I did have a couple issues with the default
--- config not running the command I want, and it kept throwing errors so instead I use a simple
--- lua command to run the method I want.
+-- telescope.nvim config.
+-- I have no idea what happened to telescope.nvim, it's just gone from my config and
+-- apparently I forgot it existed. idk why this is here still, it just is.
 
 vim.keymap.set('n', '<leader>ff', '<cmd>lua =require("telescope.builtin").find_files()<CR>')
 vim.keymap.set('n', '<leader>fg', '<cmd>lua =require("telescope.builtin").live_grep()<CR>')
