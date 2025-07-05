@@ -23,6 +23,10 @@ really wanted to, so long as you properly `require` them in the `setup.lua` file
 stuff is in `lua/core/`, where you'll also find a `keymaps.lua` and a `options.lua` file. These have
 the keymap config, and miscellaneous options respectively.
 
+**Note:** This config *does not work with neovim versions older than neovim v0.11.0*.
+You could modify it to work with anything older, as the only real neovim v0.11.0 features this
+current config uses are the new LSP config options in `lua/plugins/nvim-lspconfig.lua`.
+
 # Installation
 
 If you want to use this config, all you have to do is go to where your neovim config folder is
@@ -31,4 +35,5 @@ terminal, and run
 ```
 git clone https://github.com/TimeCubed/nvim.git
 ```
-and that'll clone my config into your config folder.
+and that'll clone my config into your config folder. If all goes well, that should be the only thing
+you need to do.
