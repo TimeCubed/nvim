@@ -1,50 +1,34 @@
-# My NeoVim Config
+# nvim
 
-This github repo is for my NeoVim config files. My config is quite minimalistic. You won't find a
-lot of pre-installed plugins here and this is most likely something a lot of people will find a  
-little bad. This config doesn't have stuff like lualine or bufferline or even nvim-tree, instead
-I use Telescope for navigating through files. I used this config (made entirely by myself) to help
-learn NeoVim, and that's why this config may feel "empty" or "unusable" for some people, as I used
-this config to learn to use the default Vim motions, so the config is mostly pure NeoVim. There are 
-a lot of comments all around the config, and I highly recommend reading them to get a better 
-understanding of how stuff is structured.
+This repository is for my personal (somewhat minimalistic) neovim config. This originally started as
+a way to learn the basics of using neovim and how to configure it, but it has slowly grown into a
+fast, minimalistic, and somewhat versatile config (for me, at least). It's modular, meaning the
+config is separated into several smaller files, so it's more convenient to maintain or modify. There
+used to be a lot of comments around the config, but I've removed/rewritten most of them since I felt
+like they were too attached to my old personality, which is something I want to get away from
+(sorry, that was too personal, wasn't it?). Hopefully it isn't too difficult to figure out how
+things work in this config still.
 
-Another note to take is that this config is better used on WSL or Linux rather than on Windows.
-This is because the modularity of this config may not work on Windows (and I've experienced a 
-couple issues myself when I wrote this config on windows) so if you're using NeoVim on Windows, I 
-highly recommend installing a WSL distro instead and using NeoVim there.
+Also, this config does not work well with neovim when on windows. I've run into quite a lot of
+issues when working on this config myself while on windows, and switching to WSL fixed all of them.
+I'm not sure why, but windows doesn't like it when you do modular configs.
 
-# Technical Details
+# Config Details & Structure
 
-I use the Lazy.nvim package manager for, well, managing packages. I've had great luck using it before
-and it's been quite easy to use. For plugin setups, there are 2 main files. One of them is located in
-`lua/core/plugins/setup.lua`, and the other in `lua/plugins/lazy.lua`. The setup.lua file
-is to setup all of the plugin configs, and the other one is the config for Lazy.nvim. All of my 
-plugin setups are located in `lua/plugins`. ~~I keep all of the configs in separate folders, and this
-may be a little annoying for some who prefer using just single files in a folder, but I made it that
-way, and I can't be bothered enough to refactor the config to use single files (although it's not
-actually *that* difficult)~~ Now done!. All of the keymaps are located at `lua/core/config/keymaps.lua`, and
-almost all of them have comments over them that explain their use case. The NeoVim options are
-located at `lua/core/config/options.lua`, right next to the keymaps file. The basic options don't
-have any comments attached to them, while some of the other options may have some attached to explain
-why I used them. Again I highly recommend reading through all of the comments in the files here (more
-importantly, the `options.lua` and `keymaps.lua` files) to understand how stuff works. I have a 
-couple nice keybinds in the `keymaps.lua` file, and feel free to copy them over to your config with
-whatever keybind works best for you.
+This config uses Lazy.nvim as its package manager. It's fast, and lightweight because it lazy-loads
+plugins (idk what that means either, dw). Plugins can be added in `lua/plugins/lazy.lua`, in the
+call to `lazy.setup()`, and their config files can be added in `lua/core/plugins/setup.lua`. My
+plugin configs are all located in `lua/plugins/`, but you could put them pretty much anywhere if you
+really wanted to, so long as you properly `require` them in the `setup.lua` file. The non-plugin
+stuff is in `lua/core/`, where you'll also find a `keymaps.lua` and a `options.lua` file. These have
+the keymap config, and miscellaneous options respectively.
 
 # Installation
 
-To install this config, just create a folder named 'nvim' in `~/.config` (if you're on Windows, please use WSL), 
-and then you can clone the repository using the following command:
+If you want to use this config, all you have to do is go to where your neovim config folder is
+located (on linux, this is usually `~/.config/nvim/`. not sure where it is on windows or macos) in a
+terminal, and run
 ```
-git clone https://github.com/TimeCubed/nvim.git ~/.config/nvim/
+git clone https://github.com/TimeCubed/nvim.git
 ```
-and this will clone the latest config of mine to your `~/.config/nvim` folder. It's that simple!
-
-# Other Details
-
-If you would like to fork this config or modify it or whatever you would want to do, feel free to do
-so. I know that a lot of my config conflicts with a lot of people's preferences, but that's what a
-preference is, it's subjective! You may not like this config, so if you would like to make any changes, feel free to do so. Also, I will not be accepting pull requests or such, this is not a public config, it's a personal one. Although, I will regularly check the Issues tab if there's any
-issue in the config, and I will respond accordingly. Thank you for taking the time to read this, and
-have fun using my config!
+and that'll clone my config into your config folder.
