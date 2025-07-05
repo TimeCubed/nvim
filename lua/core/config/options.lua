@@ -1,4 +1,5 @@
 local opt = vim.opt
+
 -- line numbers + relative numbers
 opt.number = true
 opt.relativenumber = true
@@ -33,6 +34,7 @@ opt.wrap = false
 opt.cursorline = true
 opt.termguicolors = true
 opt.signcolumn = 'yes'
+opt.colorcolumn = "80,100"
 
 -- miscellaneous
 
