@@ -1,14 +1,14 @@
--- This used to be set to 'github_dark_colorblind' but I removed it in favor of
--- another built-in theme called habamax. I preferred the colors over the other
--- one. To be clear: I'm not colorblind, I just preferred the colorblind one
--- over the dark_high_contrast colors.
-vim.cmd('colorscheme habamax')
+-- I installed the vscode.nvim theme because I always sort of liked the theme
+-- vscode used. Now I can experience it inside of neovim. Funnily enough, the
+-- vscode theme was one of the things making me think of moving off neovim.
+--require('vscode').setup()
 
--- Because I don't use lualine, the colorscheme here changes the default statusline color 
--- to an ugly blue color. I didn't quite like that so these next lines just set them to
--- black text on white background. The second one is probably useless as you won't ever see
--- the statusline inactive because I set the statusline to have 1 global line for all buffers,
--- but it's good if someone else wants to change this. These just use a hex color code, so it's 
--- easy to set to whatever color you may like
-vim.cmd('hi StatusLine guibg=#efefef guifg=#101010')
+--vim.cmd('colorscheme vscode')
+--vim.cmd('colorscheme habamax')
+vim.cmd('colorscheme night-owl')
+
+-- I still keep these though so that if anyone wants to change the StatusLine
+-- then they would know how to. I'm honestly unsure if this would affect anything
+-- using LuaLine
+vim.cmd('hi StatusLine guibg=#30363F guifg=#A0A8B5')
 vim.cmd('hi StatusLineNC guibg=#909090 guifg=#101010')

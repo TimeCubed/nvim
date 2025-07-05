@@ -28,7 +28,11 @@ opt.expandtab = false
 -- so you may want to change this. I have to use this so neovim doesn't run powershell or
 -- something when I open the terminal.
 
-opt.shell = 'kali.exe'
+--opt.shell = 'kali.exe'
+--opt.shell = '/mnt/c/Windows/System32/wsl.exe -d debian'
+--opt.shell = 'wsl.exe -d debian'
+--opt.shell = 'wsl.exe'
+opt.shell = 'bash'
 
 -- Searching
 
@@ -57,6 +61,6 @@ opt.backspace = 'indent,eol,start'
 opt.splitright = true
 opt.splitbelow = true
 
---opt.clipboard = 'unnamed' -- removed for slowness reasons
+--opt.clipboard = 'unnamed' -- Removed for slowness reasons
 opt.iskeyword:append('-')
-opt.laststatus = 3 -- makes the status line global 
+opt.laststatus = 3 -- Makes the status line global 

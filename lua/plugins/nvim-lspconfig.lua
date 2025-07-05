@@ -1,24 +1,58 @@
 local lspconfig = require('lspconfig')
 local lsp_defaults = lspconfig.util.default_config
 
-lsp_defaults.capabilities = vim.tbl_deep_extend(
+vim.lsp.capabilities = vim.tbl_deep_extend(
 	'force',
 	lsp_defaults.capabilities,
 	require('cmp_nvim_lsp').default_capabilities()
 )
 
--- Here is where I setup clangd for C and C++. Soon I'll try adding support for
--- rust-analyzer, but I just can't seem to find any sources to understand how to
--- properly set it up.
-
-lspconfig.clangd.setup({
-	single_file_support = true,
-	flags = {
-		debounce_text_changes = 0,
-	},
+--vim.lsp.config('clangd', {
+--	single_file_support = true,
+--	flags = {
+--		debounce_text_changes = 0,
+--	},
+--	root_dir = lspconfig.util.root_pattern("compile_commands.json", "makefile", "Makefile", ".git"),
+--})
+vim.lsp.config('clangd', {
+	cmd = {'clangd'},
+	root_markers = {'compile_commands.json', 'makefile', '.git'},
+	filetypes = {'c', 'cpp'},
 })
+vim.lsp.enable('clangd')
 
--- Here I create an aut command on the event 'LspAttach', which fires whenever an
+vim.lsp.config('rust_analyzer', {
+	filetypes = {"rs"},
+	settings = {
+		["rust-analyzer"] = {
+			workspace = {
+				symbol = {
+					search = {
+						kind = "all_symbols"
+					}
+				}
+			}
+		},
+	}
+})
+vim.lsp.enable('rust_analyzer')
+
+vim.lsp.config('lua_ls', {
+
+})
+vim.lsp.enable('lua_ls')
+
+vim.lsp.config('pyright', {
+
+})
+vim.lsp.enable('pyright')
+
+vim.lsp.config('glsl_analyzer', {
+
+})
+vim.lsp.enable('glsl_analyzer')
+
+-- Here I create an auto command on the event 'LspAttach', which fires whenever an
 -- LSP gets attached to a file or buffer. I use it to set up stuff like keymaps
 -- when an LSP server is fired up so I can find and do what I want.
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -43,14 +77,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		bufmap('n', '<leader>jde', '<cmd>lua vim.lsp.buf.declaration()<CR>')        -- Jump to DEclaration
 		bufmap('n', '<leader>ji' , '<cmd>lua vim.lsp.buf.implementation()<CR>')     -- Jump to Implementation
 		bufmap('n', '<leader>jtd', '<cmd>lua vim.lsp.buf.type_definition()<CR>')    -- Jump to Type Definition
-		bufmap('n', '<leader>r'  , '<cmd>lua vim.lsp.buf.references()<CR>')         -- References
+		bufmap('n', '<leader>re'  , '<cmd>lua vim.lsp.buf.references()<CR>')         -- References
 		bufmap('n', '<leader>fs' , '<cmd>lua vim.lsp.buf.signature_help()<CR>')     -- Function Signature
 
 		-- This keymap below is probably for refactoring. I've probably
 		-- forgotten about this keymap like a hundred times when I want to refactor 
 		-- some variable but it's handy to know this one. I don't actually know
 		-- what this does, but I'm sure you can figure it out.
-		bufmap('n', '<F2>'       , '<cmd>lua vim.lsp.buf.rename()<CR>')             -- Rename
+		bufmap('n', '<leader>rn'       , '<cmd>lua vim.lsp.buf.rename()<CR>')             -- Rename
 
 		-- Here's a funny story: I had no idea what to map these next 2 keymaps to,
 		-- <leader>qa is quite hard to type for me so I just started looking around
@@ -67,4 +101,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		bufmap('n', '<leader>dp' , '<cmd>lua vim.diagnostic.goto_prev()<CR>')       -- Diagnostics go to Previous
 		bufmap('n', '<leader>dn' , '<cmd>lua vim.diagnostic.goto_next()<CR>')       -- Diagnostics go to next
 	end
+})
+
+vim.diagnostic.config ({
+	virtual_text = true,
 })

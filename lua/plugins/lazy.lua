@@ -43,11 +43,13 @@ lazy.opts = {lazy = true}
 
 lazy.setup({
 	-- Appearance
-	--{'projekt0n/github-nvim-theme'}, -- I removed this in favor of the built-in habamax theme.
+	--{'Mofiqul/vscode.nvim'}, -- I removed OneDark.nvim for this theme instead because I prefer vscode's themes.
+	{'oxfist/night-owl.nvim'},
 	{'nvim-treesitter/nvim-treesitter'},
 	{'nvim-treesitter/nvim-treesitter-textobjects'},
 	{'lukas-reineke/indent-blankline.nvim'},
 	{'nvim-tree/nvim-web-devicons'},
+	{'nvim-lualine/lualine.nvim'},
 
 	-- Functionality
 	{'andweeb/presence.nvim'},
@@ -55,15 +57,20 @@ lazy.setup({
 	{'nvim-telescope/telescope.nvim'},
 	{'nvim-lua/plenary.nvim'},
 	{'CRAG666/code_runner.nvim'},
+	--{'akinsho/bufferline.nvim'},
+	{'hrsh7th/cmp-nvim-lsp-signature-help'},
 
 	-- Auto Completion
 	{'williamboman/mason.nvim'},
 	{'neovim/nvim-lspconfig'},
-	{'hrsh7th/nvim-cmp'},
+	{
+		'hrsh7th/nvim-cmp',
+		lazy = false, -- I set Lazy to not lazy load nvim-cmp, as this apparently caused cmp to be slow.
+	},
 	{'hrsh7th/cmp-buffer'},
 	{'hrsh7th/cmp-path'},
-	{'saadparwaiz1/cmp_luasnip'},
 	{'hrsh7th/cmp-nvim-lsp'},
+	{'saadparwaiz1/cmp_luasnip'},
 
 	-- Snippets Support
 	{'L3MON4D3/LuaSnip'},

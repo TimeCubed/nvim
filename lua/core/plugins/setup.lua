@@ -19,7 +19,14 @@ require('plugins.autocomplete')
 require('plugins.treesitter')
 require('plugins.telescope')
 
+require('plugins.indent-blankline')
+--require('plugins.bufferline')
+
 -- I changed the 'github-nvim-theme' folder to 'colorscheme' instead
 -- so it's more clear what it's for, as well as to be more general with it.
-require('plugins.colorscheme')
 require('plugins.code-runner')
+
+require('plugins.lualine')
+require('plugins.night-owl')
+
+require('plugins.colorscheme')

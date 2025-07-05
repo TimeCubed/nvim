@@ -12,25 +12,31 @@
 require('code_runner').setup({
 	filetype = {
 		cpp = {
-			"cd $dir &&",
-			"gcc $fileName -o main -lstdc++ &&",
+			"cd \"$dir\"; ",
+			"gcc $fileName -o main -lstdc++ -lm && ",
+			"echo \"Compilation complete!\" && ",
 			"./main &&",
 			"rm main"
 		},
 
 		c = {
-			"cd $dir &&",
-			"gcc $fileName -o main &&",
-			"$dir/main &&",
-			"rm $dir/main"
+			"cd \"$dir\" && ",
+			"gcc $fileName -o /tmp/$fileNameWithoutExt && ",
+			"/tmp/$fileNameWithoutExt && ",
+			"rm /tmp/$fileNameWithoutExt",
 		},
 
 		rust = {
-			"cd $dir/../",
+			"cd $dir/../ && ",
 			"cargo run"
+		},
+
+		python = {
+			"cd $dir && ",
+			"python3 $fileName"
 		}
 	}
 })
 
--- Here I just add a new keymap to run the RunCode commmand using <leader>ru.
+-- Here I just add a new keymap to run the RunCode command using <leader>ru.
 vim.keymap.set('n', '<leader>ru', '<cmd>RunCode<cr>i')

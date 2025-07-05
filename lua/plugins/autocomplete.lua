@@ -37,10 +37,12 @@ cmp.setup({
 		{
 			name = 'buffer',
 		} ]]--
+
 		{name = 'nvim_lsp'},
-		{name = 'buffer'},
+		{name = 'nvim_lsp_signature_help'},
 		{name = 'path'},
 		{name = 'luasnip'},
+		{name = 'buffer'},
 	},
 	window = {
 		-- This used to be the other way around where the documentation would
