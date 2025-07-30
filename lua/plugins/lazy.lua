@@ -35,14 +35,15 @@ lazy.opts = {
 lazy.setup({
 	-- Appearance
 	{'oxfist/night-owl.nvim'},
+	{'bartekjaszczak/gruv-vsassist.nvim'},
 	{'nvim-treesitter/nvim-treesitter'},
-	{'nvim-treesitter/nvim-treesitter-textobjects'},
+	--{'nvim-treesitter/nvim-treesitter-textobjects'},
 	{'lukas-reineke/indent-blankline.nvim'},
 	{'nvim-tree/nvim-web-devicons'},
 	{'nvim-lualine/lualine.nvim'},
 
 	-- Functionality
-	{'andweeb/presence.nvim'},
+	--{'andweeb/presence.nvim'},
 	{'windwp/nvim-autopairs'},
 	{'nvim-telescope/telescope.nvim'},
 	{'nvim-lua/plenary.nvim'},
@@ -64,5 +65,5 @@ lazy.setup({
 
 	-- Snippets Support
 	{'L3MON4D3/LuaSnip'},
-	{'rafamadriz/friendly-snippets'},
+	--{'rafamadriz/friendly-snippets'},
 })
