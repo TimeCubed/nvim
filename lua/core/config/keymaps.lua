@@ -3,8 +3,10 @@ vim.g.mapleader = ' '
 
 -- this opens a terminal, running the shell specified in core/config/options.lua.
 -- an alternative is to use plugins like akinsho/toggleterm.nvim, but this is simpler.
-vim.keymap.set('n', '<leader>tr', '<cmd>sp<CR><cmd>term<CR>i', {desc = 'Open terminal'})
-vim.keymap.set('t', 'jk', '<C-\\><C-n>')
+vim.keymap.set('n', '<leader>tr', '<cmd>sp<CR><cmd>term<CR>')
+
+-- vertical terminal
+vim.keymap.set('n', '<leader>tv', '<cmd>vert:sp<CR><cmd>term<CR>')
 
 -- quick keybind to quit neovim only if all changes have been written.
 vim.keymap.set('n', '<leader>qt', '<cmd>qa<CR>')
@@ -38,8 +40,11 @@ vim.keymap.set({'n', 'v'}, 'L', '$')
 -- go to normal mode using jk.
 vim.keymap.set('i', 'jk', '<Esc>')
 
+-- go to normal mode using jk in terminal mode
+vim.keymap.set('t', 'jk', '<C-\\><C-n>')
+
 -- disable the escape key in insert and visual mode.
-vim.keymap.set({'v', 'i'}, '<Esc>', '<NOP>')
+vim.keymap.set('i', '<Esc>', '<NOP>')
 
 -- quick keybind to bring up the netrw explorer.
 vim.keymap.set('n', '<leader>e', '<cmd>Ex<CR>')
@@ -58,10 +63,23 @@ vim.keymap.set('n', '<C-j>', '<C-w>j');
 vim.keymap.set('n', '<C-k>', '<C-w>k');
 vim.keymap.set('n', '<C-l>', '<C-w>l');
 
--- move to next/previous buffer. was used with bufferline, but bufferline was removed from the config,
--- so these are unused.
+-- move to next/previous buffer. was used with bufferline, but bufferline was
+-- removed from the config, so these are unused.
 --vim.keymap.set('n', 'n', '<CMD>:bn<CR>')
 --vim.keymap.set('n', 'b', '<CMD>:bp<CR>')
 
 -- also used with bufferline. also unused.
 --vim.keymap.set('n', '<leader>c', '<CMD>:bd<CR>')
+
+-- quick indent/unindent keybinds
+-- I *could* just use > or < for it, but I like my tabs
+-- also, note for future me: you can use = to autoindent.
+-- I know you're going to forget that, so there you go, you're welcome.
+vim.keymap.set('v', '<Tab>', '>')
+vim.keymap.set('v', '<S-Tab>', '<')
+
+-- keybind for :tabnew, :tabnext and :tabprev
+vim.keymap.set('n', '<leader>tc', '<cmd>:tabnew<cr>')
+vim.keymap.set('n', '<leader>tn', '<cmd>:tabnext<cr>')
+vim.keymap.set('n', '<leader>tp', '<cmd>:tabprev<cr>')
+vim.keymap.set('n', '<leader>tx', '<cmd>:tabclose<cr>')
