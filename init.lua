@@ -1,5 +1,8 @@
 -- simple modular config system. can sometimes fail when using windows, so it's
--- perferable to use WSL with neovim, instead of using neovim on windows.
+-- preferable to use WSL with neovim, instead of using neovim on windows.
+
+-- apparently this is supposed to speed things up?
+--vim.loader.enable()
 
 require("core.plugins.setup")
 
