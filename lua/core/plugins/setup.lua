@@ -14,6 +14,7 @@ require('plugins.colorscheme') -- include this first!
 require('plugins.treesitter')
 require('plugins.lualine')
 require('plugins.indent-blankline')
+require('plugins.tabscope')
 
 -- functionality
 require('plugins.mason')

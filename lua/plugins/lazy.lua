@@ -41,6 +41,7 @@ lazy.setup({
 	{'lukas-reineke/indent-blankline.nvim'},
 	{'nvim-tree/nvim-web-devicons'},
 	{'nvim-lualine/lualine.nvim'},
+	{'backdround/tabscope.nvim'},
 
 	-- Functionality
 	--{'andweeb/presence.nvim'},
