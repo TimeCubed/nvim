@@ -65,12 +65,16 @@ vim.keymap.set('n', '<S-d>', 'd$')
 -- I *could* just use > or < for it, but I like my tabs
 -- also, note for future me: you can use = to autoindent.
 -- I know you're going to forget that, so there you go, you're welcome.
-vim.keymap.set('v', '<Tab>',   '>')
-vim.keymap.set('v', '<S-Tab>', '<')
+vim.keymap.set('v', '<Tab>',   '>gv')
+vim.keymap.set('v', '<S-Tab>', '<gv')
 
 -- move a full line up or down in normal mode.
 vim.keymap.set('n', '<S-k>', '<cmd>m .-2<CR>==')
 vim.keymap.set('n', '<S-j>', '<cmd>m .+1<CR>==')
+
+-- move multiple lines in visual mode up or down
+vim.keymap.set('v', '<S-k>', ':m \'<-2<CR>gv=gv')
+vim.keymap.set('v', '<S-j>', ':m \'>+1<CR>gv=gv')
 
 -- same as above keybinds, but for insert mode. unused.
 --vim.keymap.set('i', '<S-j>', '<Esc><cmd>m .+1<CR>==gi')
@@ -83,6 +87,18 @@ vim.keymap.set('n', '<leader>v', '<C-w>v<C-w>l')
 
 -- splits horizontally.
 vim.keymap.set('n', '<leader>hr', '<cmd>sp<CR>')
+
+-- resize window in different directions
+vim.keymap.set('n', '<C-Up>',    ':resize -2<CR>'     )
+vim.keymap.set('n', '<C-Down>',  ':resize +2<CR>'     )
+vim.keymap.set('n', '<C-Left>',  ':vert:resize -2<CR>')
+vim.keymap.set('n', '<C-Right>', ':vert:resize +2<CR>')
+
+-- resize but for terminal mode as well
+vim.keymap.set('t', '<C-Up>',    ':resize -2<CR>'     )
+vim.keymap.set('t', '<C-Down>',  ':resize +2<CR>'     )
+vim.keymap.set('t', '<C-Left>',  ':vert:resize -2<CR>')
+vim.keymap.set('t', '<C-Right>', ':vert:resize +2<CR>')
 
 --------     NAVIGATION    --------
 
