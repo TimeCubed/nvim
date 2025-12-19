@@ -22,6 +22,7 @@ require('plugins.nvim-lspconfig')
 require('plugins.autocomplete') -- apparently this sets up luasnip?? where past me?? where??
 require('plugins.code-runner')
 require('plugins.autopairs')
+require('plugins.winresize')
 
 -- removed
 --require('plugins.bufferline')
