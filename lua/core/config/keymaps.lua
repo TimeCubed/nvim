@@ -88,18 +88,6 @@ vim.keymap.set('n', '<leader>v', '<C-w>v<C-w>l')
 -- splits horizontally.
 vim.keymap.set('n', '<leader>hr', '<cmd>sp<CR>')
 
--- resize window in different directions
-vim.keymap.set('n', '<C-Up>',    ':resize -2<CR>'     )
-vim.keymap.set('n', '<C-Down>',  ':resize +2<CR>'     )
-vim.keymap.set('n', '<C-Left>',  ':vert:resize -2<CR>')
-vim.keymap.set('n', '<C-Right>', ':vert:resize +2<CR>')
-
--- resize but for terminal mode as well
-vim.keymap.set('t', '<C-Up>',    ':resize -2<CR>'     )
-vim.keymap.set('t', '<C-Down>',  ':resize +2<CR>'     )
-vim.keymap.set('t', '<C-Left>',  ':vert:resize -2<CR>')
-vim.keymap.set('t', '<C-Right>', ':vert:resize +2<CR>')
-
 --------     NAVIGATION    --------
 
 -- go to the start of the line in normal and visual mode.
