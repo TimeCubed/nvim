@@ -24,7 +24,7 @@ vim.keymap.set('n', '<leader>x', '<cmd>q<cr>')
 vim.keymap.set('n', '<leader>qt', '<cmd>qa<cr>')
 
 -- force quit neovim, regardless of if changes were written or not
-vim.keymap.set('n', '<leader>qa', '<cmd>!qa<cr>')
+vim.keymap.set('n', '<leader>qa', '<cmd>qa!<cr>')
 
 -- move to next/previous buffer. was used with bufferline, but bufferline was
 -- removed from the config, so these are unused.
