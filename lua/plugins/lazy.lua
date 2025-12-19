@@ -51,6 +51,7 @@ lazy.setup({
 	{'CRAG666/code_runner.nvim'},
 	{'hrsh7th/cmp-nvim-lsp-signature-help'},
 	--{'akinsho/bufferline.nvim'},
+	{'pogyomo/winresize.nvim'},
 
 	-- Auto Completion
 	{'williamboman/mason.nvim'},
