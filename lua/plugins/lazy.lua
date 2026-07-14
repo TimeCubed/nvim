@@ -37,7 +37,7 @@ lazy.setup({
 	{'oxfist/night-owl.nvim'},
 	{'bartekjaszczak/gruv-vsassist.nvim'},
 	{'nvim-treesitter/nvim-treesitter'},
-	--{'nvim-treesitter/nvim-treesitter-textobjects'},
+	{'nvim-treesitter/nvim-treesitter-textobjects'},
 	{'lukas-reineke/indent-blankline.nvim'},
 	{'nvim-tree/nvim-web-devicons'},
 	{'nvim-lualine/lualine.nvim'},
@@ -52,6 +52,7 @@ lazy.setup({
 	{'hrsh7th/cmp-nvim-lsp-signature-help'},
 	--{'akinsho/bufferline.nvim'},
 	{'pogyomo/winresize.nvim'},
+	{'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'},
 
 	-- Auto Completion
 	{'williamboman/mason.nvim'},
@@ -64,6 +65,11 @@ lazy.setup({
 	{'hrsh7th/cmp-path'},
 	{'hrsh7th/cmp-nvim-lsp'},
 	{'saadparwaiz1/cmp_luasnip'},
+	{
+		'mrcjkb/rustaceanvim',
+		version = '^7',
+		lazy = false,
+	},
 
 	-- Snippets Support
 	{'L3MON4D3/LuaSnip'},
