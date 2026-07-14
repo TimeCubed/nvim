@@ -20,7 +20,6 @@ opt.expandtab = false
 opt.shell = 'bash'
 
 -- searching
-
 opt.ignorecase = true
 opt.smartcase = true
 
@@ -29,6 +28,12 @@ opt.smartcase = true
 
 -- wrapping
 opt.wrap = false
+
+-- code folding
+opt.foldcolumn = '1'
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true
 
 -- appearance
 opt.cursorline = true
