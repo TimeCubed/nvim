@@ -23,6 +23,7 @@ require('plugins.autocomplete') -- apparently this sets up luasnip?? where past 
 require('plugins.code-runner')
 require('plugins.autopairs')
 require('plugins.winresize')
+require('plugins.nvim-ufo')
 
 -- removed
 --require('plugins.bufferline')
