@@ -46,15 +46,24 @@ vim.keymap.set('n', '<leader>hl', '<cmd>nohlsearch<cr>')
 vim.keymap.set('n', '<leader>tc', '<cmd>tabnew<cr>'  )
 vim.keymap.set('n', '<leader>tn', '<cmd>tabnext<cr>' )
 vim.keymap.set('n', '<leader>tp', '<cmd>tabprev<cr>' )
+vim.keymap.set('n', '<leader>tN', '<cmd>tabprev<cr>' ) -- alternative keymap
 vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<cr>')
 
 --------   MODAL KEYBINDS  --------
 
 -- go to normal mode using jk in terminal mode
+-- case insensitive.
 vim.keymap.set('t', 'jk', '<C-\\><C-n>')
+vim.keymap.set('t', 'Jk', '<C-\\><C-n>')
+vim.keymap.set('t', 'jK', '<C-\\><C-n>')
+vim.keymap.set('t', 'JK', '<C-\\><C-n>')
 
 -- go to normal mode using jk.
+-- case insensitive.
 vim.keymap.set('i', 'jk', '<Esc>')
+vim.keymap.set('i', 'Jk', '<Esc>')
+vim.keymap.set('i', 'jK', '<Esc>')
+vim.keymap.set('i', 'JK', '<Esc>')
 
 -------- TEXT MANIUPLATION --------
 
@@ -106,6 +115,21 @@ vim.keymap.set('n', '<leader>ff', require("telescope.builtin").find_files)
 vim.keymap.set('n', '<leader>fg', require("telescope.builtin").live_grep)
 vim.keymap.set('n', '<leader>fb', require("telescope.builtin").buffers)
 vim.keymap.set('n', '<leader>fh', require("telescope.builtin").help_tags)
+
+---------- MISCELLANEOUS ----------
+
+-- code folding keymaps.
+vim.keymap.set('n', ';', 'za')
+
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+
+vim.keymap.set('n', '<leader>fk', function()
+	local winid = require('ufo').peekFoldedLinesUnderCursor()
+	if not winid then
+		vim.lsp.buf.hover()
+	end
+end)
 
 -------- DISABLED KEYBINDS --------
 
