@@ -7,6 +7,8 @@ local luasnip = require('luasnip')
 
 local select_opts = {behavior = cmp.SelectBehavior.Select}
 
+vim.o.winborder = "rounded"
+
 cmp.setup({
 	-- ohh it sets it up *here*. ok past me. you won there.
 	snippet = {
@@ -23,8 +25,8 @@ cmp.setup({
 		{name = 'buffer'},
 	}),
 	window = {
-		completion = cmp.config.window.bordered(),
-		--documentation = cmp.config.window.bordered(),
+		completion = cmp.config.window.bordered({}),
+		documentation = cmp.config.window.bordered({}),
 	},
 	mapping = {
 		['<Up>'] = cmp.mapping.select_prev_item(select_opts),
@@ -44,17 +46,19 @@ cmp.setup({
 		['<C-f>'] = cmp.mapping(function(fallback)
 			if luasnip.jumpable(1) then
 				luasnip.jump(1)
-			else
-				fallback()
 			end
+			--else
+			--	fallback()
+			--end
 		end, {'i', 's'}),
 
 		['<C-b>'] = cmp.mapping(function(fallback)
 			if luasnip.jumpable(-1) then
 				luasnip.jump(-1)
-			else
-				fallback()
 			end
+			--else
+			--	fallback()
+			--end
 		end, {'i', 's'}),
 
 		['<S-Tab>'] = cmp.mapping(function(fallback)
