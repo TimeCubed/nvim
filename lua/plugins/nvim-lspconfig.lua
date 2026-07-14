@@ -10,33 +10,21 @@ vim.lsp.capabilities = vim.tbl_deep_extend(
 	require('cmp_nvim_lsp').default_capabilities()
 )
 
+--vim.lsp.config('ccls', {
+--	workspace_required = false
+--})
+--vim.lsp.enable('ccls')
+
 vim.lsp.config('clangd', {
-	cmd = {'clangd'},
 	root_markers = {'compile_commands.json', 'makefile', '.git'},
 	filetypes = {'c', 'cpp'},
 	init_options = {
 		fallbackFlags = {
-			'-std=c23'
+
 		}
 	}
 })
 vim.lsp.enable('clangd')
-
-vim.lsp.config('rust_analyzer', {
-	filetypes = {"rs"},
-	settings = {
-		["rust-analyzer"] = {
-			workspace = {
-				symbol = {
-					search = {
-						kind = "all_symbols"
-					}
-				}
-			}
-		},
-	}
-})
-vim.lsp.enable('rust_analyzer')
 
 vim.lsp.config('lua_ls', {
 
@@ -52,6 +40,12 @@ vim.lsp.config('glsl_analyzer', {
 
 })
 vim.lsp.enable('glsl_analyzer')
+
+vim.lsp.config('asm-lsp', {
+	cmd = {'asm-lsp'},
+	filetypes = {'asm', 'as', 's', 'S'},
+})
+vim.lsp.enable('asm-lsp')
 
 -- this autocommand sets up all LSP action keybinds when an LSP "attaches"
 -- (whatever that means)
