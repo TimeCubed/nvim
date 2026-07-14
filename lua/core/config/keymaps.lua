@@ -101,6 +101,12 @@ vim.keymap.set('n', '<C-j>', '<C-w>j');
 vim.keymap.set('n', '<C-k>', '<C-w>k');
 vim.keymap.set('n', '<C-l>', '<C-w>l');
 
+-- telescope keymaps.
+vim.keymap.set('n', '<leader>ff', require("telescope.builtin").find_files)
+vim.keymap.set('n', '<leader>fg', require("telescope.builtin").live_grep)
+vim.keymap.set('n', '<leader>fb', require("telescope.builtin").buffers)
+vim.keymap.set('n', '<leader>fh', require("telescope.builtin").help_tags)
+
 -------- DISABLED KEYBINDS --------
 
 -- disable the escape key in insert and visual mode.
