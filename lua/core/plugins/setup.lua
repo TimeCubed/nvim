@@ -21,14 +21,13 @@ require('plugins.telescope')
 require('plugins.plenary')
 require('plugins.code-runner')
 require('plugins.winresize')
---require('plugins.mason')
---require('plugins.autocomplete') -- apparently this sets up luasnip?? where past me?? where??
 require('plugins.nvim-ufo')
+require('plugins.comment')
 
 -- auto completion
 require('plugins.mason')
 require('plugins.nvim-lspconfig')
-require('plugins.autocomplete')
+require('plugins.autocomplete') -- apparently this sets up luasnip?? where past me?? where??
 require('plugins.cmp-nvim-lsp-signature-help')
 require('plugins.cmp-buffer')
 require('plugins.cmp-path')
