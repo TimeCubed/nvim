@@ -1,7 +1,13 @@
 -- indent-blankline config.
+local registry = require('core.plugins.registry')
 
-require('ibl').setup({
-	indent = {
-		char = "│",
-	},
+registry.register({
+	spec = {'lukas-reineke/indent-blankline.nvim'},
+	setup = function()
+		require('ibl').setup({
+			indent = {
+				char = "│",
+			},
+		})
+	end
 })
