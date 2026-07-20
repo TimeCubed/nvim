@@ -31,40 +31,43 @@ lazy.opts = {
 	lazy = true,
 }
 
+lazy.setup(require('core.plugins.registry').get_specs())
+
 -- plugin list
+--[[
 lazy.setup({
 	-- Appearance
-	{'oxfist/night-owl.nvim'},
-	{'bartekjaszczak/gruv-vsassist.nvim'},
-	{'nvim-treesitter/nvim-treesitter'},
-	{'nvim-treesitter/nvim-treesitter-textobjects'},
-	{'lukas-reineke/indent-blankline.nvim'},
-	{'nvim-tree/nvim-web-devicons'},
-	{'nvim-lualine/lualine.nvim'},
-	{'backdround/tabscope.nvim'},
+!	{'oxfist/night-owl.nvim'},
+	--{'bartekjaszczak/gruv-vsassist.nvim'},
+!	{'nvim-treesitter/nvim-treesitter'},
+!	{'nvim-treesitter/nvim-treesitter-textobjects'},
+!	{'lukas-reineke/indent-blankline.nvim'},
+!	{'nvim-tree/nvim-web-devicons'},
+!	{'nvim-lualine/lualine.nvim'},
+!	{'backdround/tabscope.nvim'},
 
 	-- Functionality
 	--{'andweeb/presence.nvim'},
-	{'windwp/nvim-autopairs'},
-	{'nvim-telescope/telescope.nvim'},
-	{'nvim-lua/plenary.nvim'},
-	{'CRAG666/code_runner.nvim'},
-	{'hrsh7th/cmp-nvim-lsp-signature-help'},
+!	{'windwp/nvim-autopairs'},
+!	{'nvim-telescope/telescope.nvim'},
+!	{'nvim-lua/plenary.nvim'},
+!	{'CRAG666/code_runner.nvim'},
 	--{'akinsho/bufferline.nvim'},
-	{'pogyomo/winresize.nvim'},
-	{'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'},
+!	{'pogyomo/winresize.nvim'},
+!	{'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'},
 
 	-- Auto Completion
-	{'williamboman/mason.nvim'},
-	{'neovim/nvim-lspconfig'},
-	{
+!	{'williamboman/mason.nvim'},
+!	{'neovim/nvim-lspconfig'},
+!	{
 		'hrsh7th/nvim-cmp',
 		lazy = false, -- I set Lazy to not lazy load nvim-cmp, as this apparently caused cmp to be slow.
 	},
-	{'hrsh7th/cmp-buffer'},
-	{'hrsh7th/cmp-path'},
-	{'hrsh7th/cmp-nvim-lsp'},
-	{'saadparwaiz1/cmp_luasnip'},
+!	{'hrsh7th/cmp-nvim-lsp-signature-help'},
+!	{'hrsh7th/cmp-buffer'},
+!	{'hrsh7th/cmp-path'},
+!	{'hrsh7th/cmp-nvim-lsp'},
+!	{'saadparwaiz1/cmp_luasnip'},
 	{
 		'mrcjkb/rustaceanvim',
 		version = '^7',
@@ -75,3 +78,4 @@ lazy.setup({
 	{'L3MON4D3/LuaSnip'},
 	--{'rafamadriz/friendly-snippets'},
 })
+]]
