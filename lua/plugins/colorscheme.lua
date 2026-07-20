@@ -1,6 +1,4 @@
--- night-owl setup.
-
-local nightowl = require("night-owl")
+-- custom colorscheme setup.
 
 local options = {
 	bold = true,
@@ -12,27 +10,6 @@ local options = {
 	transparent_background = false,
 }
 
-nightowl.setup(options)
-
---require("gruv-vsassist").setup({
---	transparent = false,
---	italic_comments = false,
---	disable_nvimtree_bg = true,
---
---	color_overrides = {
---		vscBack = "#1a1a1a",
---	}
---})
-
---vim.cmd('colorscheme night-owl')
---vim.cmd('colorscheme gruv-vsassist')
-
--- these options here are for when I used to use habamax as my default
--- colorscheme, but using a custom theme + lualine means these aren't needed
--- anymore. they also don't do anything with lualine.
---vim.cmd('hi StatusLine guibg=#30363F guifg=#A0A8B5')
---vim.cmd('hi StatusLineNC guibg=#909090 guifg=#101010')
---
 local colors = {
 	fg = "#d6deeb",
 	bg = "#000000",
