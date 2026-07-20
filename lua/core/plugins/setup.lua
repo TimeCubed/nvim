@@ -1,6 +1,3 @@
--- start lazy.nvim
-require('plugins.lazy')
-
 -- actual plugin config.
 -- the order of these is completely haphazard "when I added it"-style
 -- I genuinely don't know if there's a proper order to this or not.
@@ -10,22 +7,46 @@ require('plugins.lazy')
 -- but it is haphazard.
 
 -- appearance
-require('plugins.colorscheme') -- include this first!
+require('plugins.night-owl')
 require('plugins.treesitter')
+require('plugins.treesitter-textobjects')
 require('plugins.lualine')
 require('plugins.indent-blankline')
+require('plugins.nvim-web-devicons')
 require('plugins.tabscope')
 
 -- functionality
+require('plugins.autopairs')
+require('plugins.telescope')
+require('plugins.plenary')
+require('plugins.code-runner')
+require('plugins.winresize')
+--require('plugins.mason')
+--require('plugins.autocomplete') -- apparently this sets up luasnip?? where past me?? where??
+require('plugins.nvim-ufo')
+
+-- auto completion
 require('plugins.mason')
 require('plugins.nvim-lspconfig')
-require('plugins.autocomplete') -- apparently this sets up luasnip?? where past me?? where??
-require('plugins.code-runner')
-require('plugins.autopairs')
-require('plugins.winresize')
-require('plugins.nvim-ufo')
+require('plugins.autocomplete')
+require('plugins.cmp-nvim-lsp-signature-help')
+require('plugins.cmp-buffer')
+require('plugins.cmp-path')
+require('plugins.cmp-nvim-lsp')
+require('plugins.cmp_luasnip')
+
+-- snippets support
+require('plugins.luasnip')
 
 -- removed
 --require('plugins.bufferline')
 --require('plugins.presence')
---require('plugins.telescope')
+
+-- start lazy.nvim
+require('plugins.lazy')
+
+
+local registry = require('core.plugins.registry')
+registry.call_setups()
+
+require('plugins.colorscheme')
