@@ -1,22 +1,28 @@
 -- nvim-treesitter config.
 -- and no, past me, I *did* change it since. stop spreading lies!!!
+local registry = require('core.plugins.registry')
 
-require('nvim-treesitter.install').compilers = {'gcc'}
+registry.register({
+	spec = {'nvim-treesitter/nvim-treesitter'},
+	setup = function()
+		require('nvim-treesitter.install').compilers = {'gcc'}
 
-require('nvim-treesitter.configs').setup({
-	highlight = {
-		enable = true,
-	},
-	textobjects = {
-		select = {
-			enable = true,
-			lookahead = true,
-			keymaps = {
-				['af'] = "@function.outer",
-				['if'] = '@function.inner',
-        		['ac'] = '@class.outer',
-				['ic'] = '@class.inner',
+		require('nvim-treesitter.configs').setup({
+			highlight = {
+				enable = true,
+			},
+			textobjects = {
+				select = {
+					enable = true,
+					lookahead = true,
+					keymaps = {
+						['af'] = "@function.outer",
+						['if'] = '@function.inner',
+						['ac'] = '@class.outer',
+						['ic'] = '@class.inner',
+					}
+				}
 			}
-		}
-	}
+		})
+	end
 })
