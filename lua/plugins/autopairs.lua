@@ -1,5 +1,11 @@
 -- nvim-autopairs config.
+local registry = require('core.plugins.registry')
 
-require('nvim-autopairs').setup({
-	event = InsertEnter,
+registry.register({
+	spec = {'windwp/nvim-autopairs'},
+	setup = function()
+		require('nvim-autopairs').setup({
+			event = InsertEnter,
+		})
+	end
 })
