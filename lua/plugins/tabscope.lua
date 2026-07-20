@@ -1,5 +1,11 @@
 -- tabscope setup
+local registry = require('core.plugins.registry')
 
-require('tabscope').setup({
+registry.register({
+	spec = {'backdround/tabscope.nvim'},
+	setup = function()
+		require('tabscope').setup({
 
+		})
+	end
 })
