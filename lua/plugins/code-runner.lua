@@ -3,12 +3,16 @@
 local registry = require('core.plugins.registry')
 
 registry.register({
-	spec = {'CRAG666/code_runner.nvim'},
+	spec = {
+		'CRAG666/code_runner.nvim',
+		cmd = { 'RunCode', 'RunFile', 'RunProject', 'RunClose', 'CRFileType', 'CRProjects' },
+		keys = { '<leader>ru' }
+	},
 	setup = function()
 		require('code_runner').setup({
 			filetype = {
 				cpp = {
-					"cd \"$dir\"; ",
+					"cd $dir; ",
 					"gcc $fileName -o main -lstdc++ -lm && ",
 					"echo \"Compilation complete!\" && ",
 					"./main &&",
@@ -16,8 +20,9 @@ registry.register({
 				},
 
 				c = {
-					"cd \"$dir\" && ",
+					"cd $dir && ",
 					"gcc $fileName -o /tmp/$fileNameWithoutExt && ",
+					"echo \"Compilation complete!\" && ",
 					"/tmp/$fileNameWithoutExt && ",
 					"rm /tmp/$fileNameWithoutExt",
 				},
