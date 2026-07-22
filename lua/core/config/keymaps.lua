@@ -1,6 +1,3 @@
--- leader key.
-vim.g.mapleader = ' '
-
 -------- TERMINAL KEYBINDS --------
 
 -- this opens a terminal, running the shell specified in core/config/options.lua.
@@ -109,27 +106,6 @@ vim.keymap.set('n', '<C-h>', '<C-w>h');
 vim.keymap.set('n', '<C-j>', '<C-w>j');
 vim.keymap.set('n', '<C-k>', '<C-w>k');
 vim.keymap.set('n', '<C-l>', '<C-w>l');
-
--- telescope keymaps.
-vim.keymap.set('n', '<leader>ff', require("telescope.builtin").find_files)
-vim.keymap.set('n', '<leader>fg', require("telescope.builtin").live_grep)
-vim.keymap.set('n', '<leader>fb', require("telescope.builtin").buffers)
-vim.keymap.set('n', '<leader>fh', require("telescope.builtin").help_tags)
-
----------- MISCELLANEOUS ----------
-
--- code folding keymaps.
-vim.keymap.set('n', ';', 'za')
-
-vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
-
-vim.keymap.set('n', '<leader>fk', function()
-	local winid = require('ufo').peekFoldedLinesUnderCursor()
-	if not winid then
-		vim.lsp.buf.hover()
-	end
-end)
 
 -------- DISABLED KEYBINDS --------
 
