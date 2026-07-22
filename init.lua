@@ -4,6 +4,10 @@
 -- apparently this is supposed to speed things up?
 --vim.loader.enable()
 
+-- set the leader key here to ensure all plugin keymaps use the right leader.
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 require("core.plugins.setup")
 
 -- some plugin configs are doing things to my options, so I require them here
