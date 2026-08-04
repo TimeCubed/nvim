@@ -15,8 +15,8 @@ registry.register({
 		-- code folding keymaps.
 		vim.keymap.set('n', ';', 'za')
 
-		vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-		vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+		vim.keymap.set('n', 'ZC', require('ufo').openAllFolds)
+		vim.keymap.set('n', 'ZM', require('ufo').closeAllFolds)
 
 		vim.keymap.set('n', '<leader>fk', function()
 			local winid = require('ufo').peekFoldedLinesUnderCursor()
