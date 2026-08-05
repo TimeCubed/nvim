@@ -9,8 +9,8 @@ registry.register({
 				block = '<leader>bc'
 			},
 			opleader = {
-				line = 'nc',
-				block = 'bc'
+				line = 'mc',
+				block = 'nc'
 			}
 		})
 	end
